@@ -1,0 +1,13 @@
+
+Application/vendor/.keep
+Application/test/mailers/.keep
+Application/test/integration/.keep
+Application/test/helpers/.keep
+Application/test/models/.keep
+Application/test/system/.keep
+Application/test/fixtures/.keep
+Application/test/controllers/.keep
+Application/test/fixtures/files/.keep
+Application/lib/tasks/.keep
+Application/lib/assets/.keep
+Application/app/assets/images/.keep
