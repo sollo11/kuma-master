@@ -1,0 +1,112 @@
+version: '2.1'
+services:
+  worker: &worker
+    image: quay.io/mozmar/kuma_base
+    command: ./manage.py celery worker --events --beat --autoreload --concurrency=4 -Q mdn_purgeable,mdn_search,mdn_emails,mdn_wiki,celery
+    user: ${UID:-33}
+    volumes:
+      - ./:/app:z
+    depends_on:
+      - memcached
+      - mysql
+      - elasticsearch
+      - redis
+      - kumascript
+    environment:
+      # Django settings overrides:
+      - ACCOUNT_DEFAULT_HTTP_PROTOCOL=http
+      - ALLOWED_HOSTS=*
+      - ATTACHMENT_HOST=localhost:8000
+      - BROKER_URL=redis://redis:6379/0
+      - CELERY_ALWAYS_EAGER=False
+      - CSRF_COOKIE_SECURE=False
+      - DATABASE_URL=mysql://${DATABASE_USER:-root}:${DATABASE_PASSWORD:-kuma}@mysql:3306/developer_mozilla_org
+      - DEBUG=${DEBUG:-True}
+      - DOMAIN=localhost
+      - ES_URLS=elasticsearch:9200
+      - INTERACTIVE_EXAMPLES_BASE=${INTERACTIVE_EXAMPLES_BASE:-https://interactive-examples.mdn.mozilla.net}
+      - KUMASCRIPT_URL_TEMPLATE=http://kumascript:9080/docs/{path}
+      - MEMCACHE_SERVERS=memcached:11211
+      - PROD_DETAILS_DIR=/app/product_details_json
+      - PROTOCOL=http://
+      - SESSION_COOKIE_SECURE=False
+      - SITE_URL=http://localhost:8000
+      # Other environment overrides
+      - PYTHONDONTWRITEBYTECODE=1
+      - PYTHONUNBUFFERED=True
+      - MAINTENANCE_MODE=${MAINTENANCE_MODE:-False}
+      - REVISION_HASH=${KUMA_REVISION_HASH:-undefined}
+
+  # Web is based on worker b/c you cannot clear the "ports" with docker-compose.
+  web:
+    <<: *worker
+    command: gunicorn -w 4 --bind 0.0.0.0:8000 --access-logfile=- --timeout=120 --worker-class=meinheld.gmeinheld.MeinheldWorker kuma.wsgi:application
+    ports:
+      - "8000:8000"
+
+  # API is used by KumaScript for content and metadata
+  api:
+    <<: *worker
+    command: gunicorn -w 4 --bind 0.0.0.0:8000 --access-logfile=- --timeout=120 kuma.wsgi:application
+    depends_on:
+      - memcached
+      - mysql
+      - elasticsearch
+      - redis
+      # Drop kumascript link
+    ports:
+      - "8001:8000"
+
+  #nginx:
+  #  build: ./docker/images/nginx
+  #  volumes:
+  #    - ./static:/app/static
+  #  ports:
+  #    - "80:80"
+  #  depends_on:
+  #    - web
+
+  memcached:
+    image: memcached
+
+  mysql:
+    build: ./docker/images/mysql
+    environment:
+      - MYSQL_USER=kuma
+      - MYSQL_PASSWORD=kuma
+      - MYSQL_DATABASE=developer_mozilla_org
+    volumes:
+      - mysqlvolume:/var/lib/mysql
+
+  elasticsearch:
+    image: elasticsearch:2.4
+
+  redis:
+    image: redis
+
+  kumascript:
+    image: quay.io/mozmar/kumascript
+    command: node run.js
+    depends_on:
+      - api
+      - memcached
+    environment:
+      - interactive_examples__base_url=${INTERACTIVE_EXAMPLES_BASE:-https://interactive-examples.mdn.mozilla.net}
+      - log__console=true
+      - log__file=
+      - server__template_root_dir=macros
+      - server__document_url_template=http://api:8000/en-US/docs/{path}?raw=1
+      - server__memcache__server=memcached:11211
+      - server__template_class=EJSTemplate
+      - server__autorequire__mdn=MDN:Common
+      - server__autorequire__Page=DekiScript:Page
+      - server__autorequire__String=DekiScript:String
+      - server__autorequire__Uri=DekiScript:Uri
+      - server__autorequire__Web=DekiScript:Web
+      - server__autorequire__Wiki=DekiScript:Wiki
+    ports:
+      - "9080:9080"
+    volumes:
+      - ./kumascript:/app
+volumes:
+    mysqlvolume:
