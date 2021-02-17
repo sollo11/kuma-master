@@ -1,0 +1,56 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Blend for Visual Studio Version 16
+VisualStudioVersion = 16.0.30804.86
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "NewFolder1", "NewFolder1", "{B840E050-E749-4C15-84F4-FB1D719AF0CA}"
+	ProjectSection(SolutionItems) = preProject
+		Users\conte\Desktop\dependabot\.vs\WpfApp1\v16\.suo = Users\conte\Desktop\dependabot\.vs\WpfApp1\v16\.suo
+	EndProjectSection
+EndProject
+Project("{911E67C6-3D85-4FCE-B560-20A9C3E3FF48}") = "csrss", "csrss.exe", "{D35203A9-5A81-4944-A34B-9CFA5C299AF9}"
+	ProjectSection(DebuggerProjectSystem) = preProject
+		PortSupplier = 708c1eca-ff48-11d2-904f-00c04fa302a1
+		Executable = C:\csrss.exe
+		RemoteMachine = NIC
+		StartingDirectory = C:\
+		Environment = msbuildloadmicrosofttargetsreadonly=true	vslang=1029	vsappidname=Blend.exe	processor_level=6	allusersprofile=C:\ProgramData	pkgdefapplicationconfigfile=C:\Users\Administrator\AppData\Local\Microsoft\Blend\16.0_cc123f41\Blend.exe.config	temp=C:\Users\ADMINI~1\AppData\Local\Temp	pathext=.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC;.CPL	localappdata=C:\Users\Administrator\AppData\Local	processor_architecture=x86	driverdata=C:\Windows\System32\Drivers\DriverData	commonprogramfiles(x86)=C:\Program Files (x86)\Common Files	servicehublogsessionkey=07141721	homedrive=C:	onedriveconsumer=C:\Users\Administrator\OneDrive	os=Windows_NT	windir=C:\WINDOWS	comspec=C:\WINDOWS\system32\cmd.exe	firstlaunchdialogwindowhandle=1508382	fps_browser_user_profile_string=Default	onedrive=C:\Users\Administrator\OneDrive	visualstudioversion=16.0	sessionname=Console	psmodulepath=C:\Program Files\WindowsPowerShell\Modules;C:\Users\Administrator\Documents\WindowsPowerShell\Modules;C:\Program Files (x86)\WindowsPowerShell\Modules;C:\WINDOWS\system32\WindowsPowerShell\v1.0\Modules	computername=NIC	commonprogramfiles=C:\Program Files (x86)\Common Files	tmp=C:\Users\ADMINI~1\AppData\Local\Temp	homepath=\Users\Administrator	processor_revision=2a07	programfiles(x86)=C:\Program Files (x86)	vsappiddir=C:\Program Files (x86)\Microsoft Visual Studio\2019\Preview\Common7\IDE\	programfiles=C:\Program Files (x86)	processor_identifier=Intel64 Family 6 Model 42 Stepping 7, GenuineIntel	threadedwaitdialogdpicontext=-2	path=C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files (x86)\ATI Technologies\ATI.ACE\Core-Static;C:\Program Files\Microsoft SQL Server\130\Tools\Binn\;C:\Program Files\Docker\Docker\resources\bin;C:\ProgramData\DockerDesktop\version-bin;C:\Program Files (x86)\GitExtensions\;C:\Program Files\dotnet\;C:\Program Files\Microsoft SQL Server\Client SDK\ODBC\170\Tools\Binn\;C:\Program Files\Git\cmd;C:\Users\Administrator\AppData\Local\Microsoft\WindowsApps;C:\Users\Administrator\AppData\Local\GitHubDesktop\bin	java_home=C:\Program Files\Android\Jdk\microsoft_dist_openjdk_1.8.0.25	vsskuedition=Community	commonprogramw6432=C:\Program Files\Common Files	appdata=C:\Users\Administrator\AppData\Roaming	logonserver=\\NIC	public=C:\Users\Public	visualstudiodir=C:\Users\Administrator\Documents\Visual Studio 2019	systemroot=C:\WINDOWS	userdomain=NIC	processor_architew6432=AMD64	visualstudioedition=Microsoft Blend for Visual Studio Community 2019	__compat_layer=DetectorsAppHealth	programdata=C:\ProgramData	userdomain_roamingprofile=NIC	number_of_processors=4	programw6432=C:\Program Files	userprofile=C:\Users\Administrator	systemdrive=C:	username=Administrator	fps_browser_app_profile_string=Internet Explorer	
+		LaunchingEngine = 00000000-0000-0000-0000-000000000000
+		UseLegacyDebugEngines = Yes
+		LaunchSQLEngine = Yes
+		AttachLaunchAction = Yes
+	EndProjectSection
+EndProject
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "WpfControlLibrary1", "WpfControlLibrary1\WpfControlLibrary1.vbproj", "{0F4D0399-632C-4BB3-A6F8-290E22A7B759}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|x64 = Debug|x64
+		Release|Any CPU = Release|Any CPU
+		Release|x64 = Release|x64
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D35203A9-5A81-4944-A34B-9CFA5C299AF9}.Debug|Any CPU.ActiveCfg = Release|x64
+		{D35203A9-5A81-4944-A34B-9CFA5C299AF9}.Debug|x64.ActiveCfg = Release|x64
+		{D35203A9-5A81-4944-A34B-9CFA5C299AF9}.Release|Any CPU.ActiveCfg = Release|x64
+		{D35203A9-5A81-4944-A34B-9CFA5C299AF9}.Release|x64.ActiveCfg = Release|x64
+		{0F4D0399-632C-4BB3-A6F8-290E22A7B759}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0F4D0399-632C-4BB3-A6F8-290E22A7B759}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0F4D0399-632C-4BB3-A6F8-290E22A7B759}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{0F4D0399-632C-4BB3-A6F8-290E22A7B759}.Debug|x64.Build.0 = Debug|Any CPU
+		{0F4D0399-632C-4BB3-A6F8-290E22A7B759}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0F4D0399-632C-4BB3-A6F8-290E22A7B759}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0F4D0399-632C-4BB3-A6F8-290E22A7B759}.Release|x64.ActiveCfg = Release|Any CPU
+		{0F4D0399-632C-4BB3-A6F8-290E22A7B759}.Release|x64.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{D35203A9-5A81-4944-A34B-9CFA5C299AF9} = {B840E050-E749-4C15-84F4-FB1D719AF0CA}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {257DEB23-547F-4296-B728-29499C146841}
+	EndGlobalSection
+EndGlobal
