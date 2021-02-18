@@ -1,0 +1,13 @@
+/*
+Styles for overall document.  Minimally styles the canvas.
+********************************************************************** */
+
+html {
+    background: #fff;
+    color: $text-color;
+}
+
+body {
+    line-height: 1.5;
+    @include set-site-font-family();
+}

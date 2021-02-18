@@ -1,0 +1,18 @@
+<!-- Production ready CKEditor scripts -->
+{% javascript 'ckeditor-prod' %}
+
+<!-- Development version -->
+{#
+{% javascript 'ckeditor-dev' %}
+#}
+<script>
+  // Define the path to non-core plugins.
+  (
+    'scayt,wsc,mdn-attachment,mdn-format,mdn-sticky-toolbar,mdn-image-attachment,mdn-link-customization,' +
+    'mdn-link-launch,mdn-redirect,mdn-sample-finder,mdn-sampler,mdn-spell,mdn-syntaxhighlighter,' +
+    'mdn-system-integration,mdn-table-customization,mdn-toggle-block,mdn-wrapstyle,descriptionlist,' +
+    'tablesort,texzilla,mdn-youtube'
+  ).split(',').forEach(function(pluginName) {
+    CKEDITOR.plugins.addExternal(pluginName, '{{ MEDIA_URL }}js/libs/ckeditor/source/plugins/' + pluginName + '/');
+  });
+</script>

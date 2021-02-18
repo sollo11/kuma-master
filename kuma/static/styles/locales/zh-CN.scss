@@ -1,0 +1,40 @@
+@import '../includes/vars';
+
+/*
+Styles for Chinese (Simplified)
+********************************************************************** */
+/* stylelint-disable value-keyword-case  */
+
+@font-face {
+    font-family: x-locale-heading-secondary;
+    font-weight: normal;
+    src:
+        local(FZLTXHK--GBK1-0), /* = Lantinghei SC Extralight */
+        local(HiraginoSansGB-W3),
+        /* Windows */
+        local('Microsoft YaHei Light'),
+        /* Linux */
+        local(DroidSansFallbackFull);
+}
+
+@font-face {
+    font-family: x-locale-heading-secondary;
+    font-weight: bold;
+    src:
+       local(FZLTXHK--GBK1-0), /* = Lantinghei SC Extralight */
+       local(HiraginoSansGB-W3),
+       /* Windows */
+       local('Microsoft YaHei Light'),
+       /* Linux */
+       local(DroidSansFallbackFull);
+}
+
+
+/* Bug 973171 */
+
+* {
+    /* !important required for locale specific override */
+    font-style: normal !important; /* stylelint-disable-line declaration-no-important */
+}
+
+/* stylelint-enable */

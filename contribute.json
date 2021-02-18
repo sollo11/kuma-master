@@ -1,0 +1,45 @@
+{
+    "name": "Kuma",
+    "description": "The app powering the Mozilla Developer Network (MDN).",
+    "repository": {
+        "url": "https://github.com/mozilla/kuma",
+        "license": "MPL2",
+        "tests": "https://travis-ci.org/mozilla/kuma"
+    },
+    "participate": {
+        "home": "https://wiki.mozilla.org/MDN",
+        "docs": "https://kuma.readthedocs.io/",
+        "mailing-list": "https://www.mozilla.org/about/forums/#dev-mdn",
+        "irc": "irc://irc.mozilla.org/#mdndev",
+        "irc-contacts": [
+            "jgmize",
+            "jpetto",
+            "jwhitlock",
+            "metadave",
+            "rjohnson",
+            "shobson"
+        ]
+    },
+    "bugs": {
+        "list": "https://bugzilla.mozilla.org/buglist.cgi?list_id=11220394&query_format=advanced&bug_status=UNCONFIRMED&bug_status=NEW&bug_status=REOPENED&product=Mozilla%20Developer%20Network",
+        "report": "https://bugzilla.mozilla.org/form.mdn",
+        "mentored": "https://bugzilla.mozilla.org/buglist.cgi?o1=isnotempty&f1=bug_mentor&resolution=---&product=Mozilla%20Developer%20Network",
+        "goodfirstbug": "https://bugzilla.mozilla.org/buglist.cgi?resolution=---&product=Mozilla%20Developer%20Network&status_whiteboard=[good%20first%20bug]&status_whiteboard_type=allwordssubstr"
+    },
+    "urls": {
+        "prod": "https://developer.mozilla.org/",
+        "stage": "https://developer.allizom.org/"
+    },
+    "keywords": [
+        "python",
+        "sass",
+        "django",
+        "html5",
+        "jquery",
+        "ckeditor",
+        "docker",
+        "ansible",
+        "mysql",
+        "elasticsearch"
+    ]
+}

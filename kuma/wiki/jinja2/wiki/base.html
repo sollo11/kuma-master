@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block experiment_js %}
+    {%- if not request.user.is_authenticated() and
+           content_experiment and
+           not content_experiment.selection_is_valid %}
+        {% javascript content_experiment.id %}
+    {%- endif %}
+{% endblock %}
+
+{% block site_css %}
+    {{ super() }}
+
+    {% if waffle.flag('line_length') %}
+        {% stylesheet 'wiki' %}
+    {% else %}
+        {% stylesheet 'wiki-skinny' %}
+    {% endif %}
+
+{% endblock %}
+
+{% block site_js %}
+    {{ super() }}
+
+    {% if waffle.flag('line_length') %}
+        {% javascript 'wiki' %}
+    {% else %}
+        {% javascript 'wiki-skinny' %}
+    {% endif %}
+
+{% endblock %}

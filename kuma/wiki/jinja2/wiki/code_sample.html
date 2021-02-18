@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        {% stylesheet 'samples' %}
+        {% if css %}
+        <style type="text/css">
+            {{ css|safe }}
+        </style>
+        {% endif %}
+    </head>
+    <body>
+        {% if html %}
+            {{ html|safe }}
+        {% endif %}
+        {% if js %}
+            <script type="text/javascript">
+                {{ js|safe }}
+            </script>
+        {% endif %}
+    </body>
+</html>

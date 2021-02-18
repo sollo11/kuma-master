@@ -1,0 +1,7 @@
+# this is a standalone requirements file used in .travis.yml to install
+# Travis CI specific requirements
+codecov==1.6.3
+# Keep in sync w/ dev.txt
+tox==2.3.1
+# Keep in sync w/ constraints.txt
+coverage==4.3.4

@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% set title = _('Search') %}
+{% set crumbs = [(None, title)] %}
+{% if not styles %}
+  {% set styles = ('search',) %}
+{% endif %}
+{% set hide_header_search = True %}
+
+{% block site_css %}
+    {{ super() }}
+{% endblock %}
+
+{% block site_js %}
+    {{ super() }}
+    {% javascript 'search' %}
+{% endblock %}
